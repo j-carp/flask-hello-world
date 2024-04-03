@@ -75,16 +75,16 @@ def selecting():
         return response_string
 
 # drop from table #########################################################################
-@app.route('/db_drop')
-def dropping():
-        conn = psycopg2.connect("postgres://jc_database_user:P0NCJOjJNYstCiEBy2O3Ox8uSPf6vDCg@dpg-co6b5eq0si5c73cd2kng-a/jc_database")
-        cur = conn.cursor()
-        cur.execute('''
-            DROP TABLE Basketball;
-            ''')
-        conn.commit()
-        conn.close()
-        return "Basketball Table Successfully Dropped"
+# @app.route('/db_drop')
+# def dropping():
+#         conn = psycopg2.connect("postgres://jc_database_user:P0NCJOjJNYstCiEBy2O3Ox8uSPf6vDCg@dpg-co6b5eq0si5c73cd2kng-a/jc_database")
+#         cur = conn.cursor()
+#         cur.execute('''
+#             DROP TABLE Basketball;
+#             ''')
+#         conn.commit()
+#         conn.close()
+#         return "Basketball Table Successfully Dropped"
         
   
 
