@@ -55,24 +55,24 @@ def inserting():
         return "Basketball Table Successfully Populated"
 
 # query the data and return information ####################################################
-@app.route('/db_select')
-def selecting():
-        conn = psycopg2.connect("postgres://jc_database_user:P0NCJOjJNYstCiEBy2O3Ox8uSPf6vDCg@dpg-co6b5eq0si5c73cd2kng-a/jc_database")
-        cur = conn.cursor()
-        cur.execute('''
-            SELECT * FROM Basketball;
-            ''')
-        records = cur.fetchall()
-        conn.close()
-        response_string=""
-        response_string+="<table>"
-        for player in records:
-            response_string+="<tr>"
-            for info in player:
-                response_string+="<td>{}</td>".format(info)
-            response_string+="</tr>"
-        response_string+="</table>"
-        return response_string
+# @app.route('/db_select')
+# def selecting():
+#         conn = psycopg2.connect("postgres://jc_database_user:P0NCJOjJNYstCiEBy2O3Ox8uSPf6vDCg@dpg-co6b5eq0si5c73cd2kng-a/jc_database")
+#         cur = conn.cursor()
+#         cur.execute('''
+#             SELECT * FROM Basketball;
+#             ''')
+#         records = cur.fetchall()
+#         conn.close()
+#         response_string=""
+#         response_string+="<table>"
+#         for player in records:
+#             response_string+="<tr>"
+#             for info in player:
+#                 response_string+="<td>{}</td>".format(info)
+#             response_string+="</tr>"
+#         response_string+="</table>"
+#         return response_string
 
 # drop from table #########################################################################
 # @app.route('/db_drop')
