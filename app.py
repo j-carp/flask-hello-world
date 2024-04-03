@@ -40,7 +40,7 @@ def creating():
 # insert into table page ####################################################################   
 @app.route('/db_insert')
 def inserting():
-            conn = psycopg2.connect("postgres://jc_database_user:P0NCJOjJNYstCiEBy2O3Ox8uSPf6vDCg@dpg-co6b5eq0si5c73cd2kng-a/jc_database")
+        conn = psycopg2.connect("postgres://jc_database_user:P0NCJOjJNYstCiEBy2O3Ox8uSPf6vDCg@dpg-co6b5eq0si5c73cd2kng-a/jc_database")
         cur = conn.cursor()
         cur.execute('''
             INSERT INTO Basketball (First, Last, City, Name, Number)
@@ -49,7 +49,7 @@ def inserting():
             ('Stephen', 'Curry', 'San Francisco', 'Warriors', 30),
             ('Nikola', 'Jokic', 'Denver', 'Nuggets', 15),
             ('Kawhi', 'Leonard', 'Los Angeles', 'Clippers', 2);
-            ''')
+        ''')
         conn.commit()
         conn.close()
         return "Basketball Table Successfully Populated"
